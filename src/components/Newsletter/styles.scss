@@ -1,0 +1,33 @@
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    height: 9.125rem;
+    background-color: #F2F2F2;
+    .inputs-width {
+        width: 17.5rem;
+    }
+    h1 {
+        text-align: center;
+        font-size: 1.375rem;
+    }
+    Button {
+        border-radius: 0;
+        height: 3rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .newsletter-content {
+        height: 19.5rem;
+        .inputs-width {
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.688rem;
+        }
+    }
+    Form {
+        flex-direction: column;
+    }
+}

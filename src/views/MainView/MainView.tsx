@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import MainCarrousel from '../../components/MainCarrousel/MainCarrousel';
 import MainNavbar from '../../components/MainNavbar/MainNavbar';
+import NewsLetter from '../../components/Newsletter/NewsLetter';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { dataMock } from '../../constants/constants';
 import { ProductsContext } from '../../context/ProductsContext';
@@ -14,7 +15,7 @@ const MainView = () => {
       <div>
         <MainNavbar />
         <MainCarrousel />
-        <Container className='cards-row'>
+        <Container className='cards-row mb-4'>
           {
             dataMock.map(el=>(
               <ProductCard 
@@ -28,7 +29,10 @@ const MainView = () => {
             ))
           }
         </Container>
-        <h1>{test}</h1>
+        <Container>
+          <h1>{test}</h1>
+        </Container>
+        <NewsLetter />
       </div>
   )
 }
