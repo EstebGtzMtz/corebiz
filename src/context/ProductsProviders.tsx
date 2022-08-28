@@ -4,7 +4,7 @@ import { ProductsContext } from './ProductsContext';
 
 const ProductsProviders = ({children}: IProductsProviderProps) => {
 
-  const [test, setTest] = useState('test para ver si jala')
+  const [test, setTest] = useState('context test its working correctly')
 
   return (
     <ProductsContext.Provider value={{test}}>

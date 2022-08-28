@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import ProductsProviders from './context/ProductsProviders';
-import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MainView from './views/MainView/MainView';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 function WithContext(){
   return(
     <ProductsProviders>
-      <App />
+      <MainView />
     </ProductsProviders>
   )
 }
@@ -19,3 +19,5 @@ root.render(
     <WithContext />
   </React.StrictMode>
 )
+
+// https://www.npmjs.com/package/react-multi-carousel
