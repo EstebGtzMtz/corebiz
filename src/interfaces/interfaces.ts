@@ -7,6 +7,10 @@ export interface ICarrouselElement{
   className: string
 }
 
+export interface IDataProducts {
+  data: IProductsResponse[]
+}
+
 export interface IProductsResponse {
   productId?: number
   productName: string

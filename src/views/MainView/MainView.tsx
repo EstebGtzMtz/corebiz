@@ -4,12 +4,12 @@ import MainCarrousel from '../../components/MainCarrousel/MainCarrousel';
 import MainNavbar from '../../components/MainNavbar/MainNavbar';
 import NewsLetter from '../../components/Newsletter/NewsLetter';
 import ProductCard from '../../components/ProductCard/ProductCard';
-import { dataMock } from '../../constants/constants';
 import { ProductsContext } from '../../context/ProductsContext';
+import { IProductsResponse } from '../../interfaces/interfaces';
 import './styles.css'
 
 const MainView = () => {
-  const {test} = useContext(ProductsContext)
+  const {test, products} = useContext(ProductsContext)
 
   return (
       <div>
@@ -17,7 +17,7 @@ const MainView = () => {
         <MainCarrousel />
         <Container className='cards-row mb-4'>
           {
-            dataMock.map(el=>(
+            products.map((el: IProductsResponse)=>(
               <ProductCard 
                 key={el.productId}
                 imageUrl={el.imageUrl}
