@@ -1,19 +1,16 @@
 import { useContext, useState } from 'react'
 import './App.css'
 import { ProductsContext } from './context/ProductsContext'
-import ProductsProviders from './context/ProductsProviders'
 
-function App() {
+const App = () => {
 
   const {test} = useContext(ProductsContext)
-  const [newTest, setnewTest] = useState(test)
 
   return (
-    <ProductsProviders>
       <div>
+        <h1>{test}</h1>
         <h1>context is now working correctly</h1>
       </div>
-    </ProductsProviders>
   )
 }
 
