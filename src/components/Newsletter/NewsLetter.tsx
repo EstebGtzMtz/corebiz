@@ -1,16 +1,21 @@
 import { Button, Container, Form } from 'react-bootstrap'
-import { INewsLetterInputs } from '../../interfaces/formInterfaces';
+import { INewsLetterInputs } from '../../interfaces/interfaces';
+import { ProductsContext } from '../../context/ProductsContext';
 import { useForm, SubmitHandler } from "react-hook-form";
+import { subscribeToNewsletter } from '../../services/ProductsService';
+import { useContext } from 'react';
 import './styles.scss'
 
 const NewsLetter = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm<INewsLetterInputs>();
-  const onSubmit: SubmitHandler<INewsLetterInputs> = data => console.log(data);
+  const {setNewsletterResponse, setShowFeedbackToast} = useContext(ProductsContext)
 
-  const handleClick = (e: any) => {
-    e.preventDefault()
-    console.log('he sido puchado')
+  const { register, handleSubmit, formState: { errors } } = useForm<INewsLetterInputs>();
+
+  const onSubmit: SubmitHandler<INewsLetterInputs> = async (data:INewsLetterInputs) => {
+    const response = await subscribeToNewsletter(data)
+    setNewsletterResponse(response)
+    setShowFeedbackToast(true)
   }
 
   return (
@@ -37,8 +42,10 @@ const NewsLetter = () => {
           />
           <Button type='submit' variant="dark">Suscribirme</Button>
         </Form>
-        {errors.name && <span>This field is required</span>}
-        {errors.email && <span>This field is required</span>}
+        <Container>
+          {errors.name && <span>This field is required</span>}
+          {errors.email && <span>This field is required</span>}
+        </Container>
       </Container>
     </Container>
   )

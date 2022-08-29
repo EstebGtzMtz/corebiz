@@ -1,0 +1,55 @@
+.footer-container {
+    background-color: black;
+    color: white;
+    height: 13.313rem;
+    .elements-container {
+        height: 100%;
+        .enterprise-info {
+            height: 100%;
+            .columns {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .column-buttons-container {
+                    height: 50%;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    display: flex;
+                    flex-direction: column;
+                    .column-buttons {
+                        width: 24.25rem;
+                        font-size: .75rem;
+                    }
+                }
+                .show-info-row {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    div {
+                        margin-right: 1.3rem;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .footer-container {
+        height: 26.5rem;
+    }
+    .column-buttons {
+        width: 14.25rem;
+        font-size: .75rem;
+    }
+}
+
+.line {
+    height: .1rem;
+    width: 3rem;
+    background-color: white !important;
+    margin-bottom: 1.25rem;
+}

@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import { Container } from 'react-bootstrap';
+import FeedbackToast from '../../components/FeedBackToast/FeedbackToast';
+import Footer from '../../components/Footer/Footer';
 import MainCarrousel from '../../components/MainCarrousel/MainCarrousel';
 import MainNavbar from '../../components/MainNavbar/MainNavbar';
 import NewsLetter from '../../components/Newsletter/NewsLetter';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import ProductsCarrousel from '../../components/ProductsCarrousel/ProductsCarrousel';
 import { ProductsContext } from '../../context/ProductsContext';
-import { IProductsResponse } from '../../interfaces/interfaces';
 import './styles.css'
 
 const MainView = () => {
@@ -15,24 +15,10 @@ const MainView = () => {
       <div>
         <MainNavbar />
         <MainCarrousel />
-        <Container className='cards-row mb-4'>
-          {
-            products.map((el: IProductsResponse)=>(
-              <ProductCard 
-                key={el.productId}
-                imageUrl={el.imageUrl}
-                productName={el.productName}
-                listPrice={el.listPrice}
-                price={el.price}
-                installments={el.installments}
-              />
-            ))
-          }
-        </Container>
-        <Container>
-          <h1>{test}</h1>
-        </Container>
+        <ProductsCarrousel />
+        <FeedbackToast />
         <NewsLetter />
+        <Footer />
       </div>
   )
 }

@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import { Container, Form, Nav, Navbar } from "react-bootstrap";
-import {AiOutlineShoppingCart} from "react-icons/ai";
-import './styles.css'
+import {AiOutlineShoppingCart, AiOutlineUser} from "react-icons/ai";
+import { ProductsContext } from "../../context/ProductsContext";
+import './styles.scss'
 
 const MainNavbar = () => {
+
+  const {quantityProducts} = useContext(ProductsContext)
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand>
         <img 
           src="https://lumimexicomx.vtexassets.com/assets/vtex/assets-builder/lumimexicomx.store-theme/2.0.1/corebiz_logo___792c2a7f859f5be56f796f3c6d27a2a6.png" 
           width="145.79"
@@ -28,9 +33,15 @@ const MainNavbar = () => {
               aria-label="Search"
             />
           </Form>
-            <Nav.Link href="#action1">Mi cuenta</Nav.Link>
             <Nav.Link>
+              <AiOutlineUser />
+              Mi cuenta
+            </Nav.Link>
+            <Nav.Link className="cart">
               <AiOutlineShoppingCart />
+              <div className="quantity-products">
+                {quantityProducts}
+              </div>
             </Nav.Link>
           </Nav>
           

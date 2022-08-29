@@ -14,7 +14,7 @@ export interface IDataProducts {
 export interface IProductsResponse {
   productId?: number
   productName: string
-  stars?: number
+  stars: number
   imageUrl:string
   listPrice?: null | number,
   price: number,
@@ -24,4 +24,17 @@ export interface IProductsResponse {
 export interface IProductInstallments {
   quantity: number
   value: number
+}
+
+export interface ISubscribeToNewsletterResponse{
+  data:ISubscribeSuccesfully
+}
+
+export interface ISubscribeSuccesfully{
+  message: string
+}
+
+export interface INewsLetterInputs {
+  name: string
+  email: string
 }
