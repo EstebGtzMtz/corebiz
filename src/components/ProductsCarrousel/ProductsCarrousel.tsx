@@ -15,21 +15,23 @@ const ProductsCarrousel = () => {
   return (
     <Container className='carrousel-container mb-4'>
       <h1>Más Vendidos</h1>
-      <Carousel responsive={responsive}>
-      {
-          products.map((el: IProductsResponse)=>(
-            <ProductCard 
-            key={el.productId}
-            imageUrl={el.imageUrl}
-            productName={el.productName}
-            listPrice={el.listPrice}
-            price={el.price}
-            installments={el.installments}
-            stars={el.stars}
-            />
-            ))
-          }
-      </Carousel>
+      <Container>
+        <Carousel responsive={responsive}>
+        {
+            products.map((el: IProductsResponse)=>(
+              <ProductCard 
+              key={el.productId}
+              imageUrl={el.imageUrl}
+              productName={el.productName}
+              listPrice={el.listPrice}
+              price={el.price}
+              installments={el.installments}
+              stars={el.stars}
+              />
+              ))
+            }
+        </Carousel>
+      </Container>
     </Container>
   )
 }
