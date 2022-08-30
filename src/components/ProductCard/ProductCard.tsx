@@ -22,6 +22,8 @@ const ProductCard = ({imageUrl, productName, listPrice, price, installments,star
           readonly={true}
           initialValue={stars}
           ratingValue={0}
+          size={11}
+          fillColor={'#F8475F'}
         />
         </div>
         {
