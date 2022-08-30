@@ -10,12 +10,16 @@ const NewsLetter = () => {
 
   const {setNewsletterResponse, setShowFeedbackToast} = useContext(ProductsContext)
 
-  const { register, handleSubmit, formState: { errors } } = useForm<INewsLetterInputs>();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<INewsLetterInputs>();
 
   const onSubmit: SubmitHandler<INewsLetterInputs> = async (data:INewsLetterInputs) => {
     const response = await subscribeToNewsletter(data)
     setNewsletterResponse(response)
     setShowFeedbackToast(true)
+    reset({
+      name: '',
+      email: ''
+    })
   }
 
   return (
