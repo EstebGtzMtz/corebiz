@@ -18,12 +18,10 @@ const ProductsProviders = ({children}: IProductsProviderProps) => {
   const [showFeedbackToast, setShowFeedbackToast] = useState(false);
   const [newsletterResponse, setNewsletterResponse] = useState('')
   const [products, setProducts] = useState<IProductsResponse[]>([])
-  const [test] = useState('context test its working correctly')
 
   return (
     <ProductsContext.Provider 
       value={{
-        test, 
         products,
         showFeedbackToast, 
         setShowFeedbackToast,

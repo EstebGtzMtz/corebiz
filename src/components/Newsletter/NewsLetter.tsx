@@ -43,8 +43,9 @@ const NewsLetter = () => {
           <Button type='submit' variant="dark">Suscribirme</Button>
         </Form>
         <Container>
-          {errors.name && <span>This field is required</span>}
-          {errors.email && <span>This field is required</span>}
+          {errors.name && <h1>Name field is required</h1>}
+          
+          {errors.email && <h1>Email field is required</h1>}
         </Container>
       </Container>
     </Container>

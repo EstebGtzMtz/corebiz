@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Button, Col, Row, Toast } from "react-bootstrap";
+import { Col, Row, Toast } from "react-bootstrap";
 import { ProductsContext } from "../../context/ProductsContext";
 
 const FeedbackToast = () => {
